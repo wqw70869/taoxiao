@@ -1,4 +1,4 @@
-package controller;
+package com.example.taoxiao;
 
 import java.util.Date;
 import java.util.List;
@@ -6,9 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import entity.sellgoods;
-import mapper.GoodsMapper;
 
 //设置访问的接口的文件
 
@@ -48,4 +45,15 @@ public class GoodsController {
 					else
 						return "更新失败";
 		}
+		@RequestMapping("/Sreachsell")//搜索买卖的商品
+				public List<sellgoods> Searchsell(String Text)
+		{
+			return goodsm.Searchesll(Text);
+		}
+	@RequestMapping("/Sreachrent")//搜索租借的商品
+	public List<rentgoods> Searchrent(String Text)
+	{
+		return goodsm.Searchrent(Text);
+	}
+
 }

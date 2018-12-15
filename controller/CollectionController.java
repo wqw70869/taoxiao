@@ -1,12 +1,10 @@
-package controller;
+package com.example.taoxiao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
-
-import mapper.CollectionMapper;
 @RestController 
 @RequestMapping("/user")
 public class CollectionController {
@@ -21,4 +19,19 @@ public class CollectionController {
 		result.put("status", "false");
 		return result.toJSONString();
 	}
+	public boolean setcollection(String UserId,String GoodsId)
+	{
+		if( cmapper.setcollection(UserId,GoodsId,Uptime))
+			return true;
+		else
+			return false;
+	}
+	public boolean delcollection(String UserId,String GoodsId)
+	{
+		if( cmapper.delcollection(UserId,GoodsId))
+			return true;
+		else
+			return false;
+	}
+
 }
