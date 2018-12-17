@@ -34,7 +34,7 @@ public interface GoodsMapper {
     		@Param("price") double price,@Param("description") String description, @Param("uptime") Date uptime);
 
     @Select("select * from sellgoods where goodsname like #{Text} OR description like #{Text} OR kinds like #{Text}")
-    List<sellgoods> Searchesll(@Param("Text") String Text);//根据关键字搜索商品
+    List<sellgoods> Searchsell(@Param("Text") String Text);//根据关键字搜索商品
 
     @Select("select * from rentgoods where goodsname like #{Text} OR description like #{Text} OR kinds like #{Text}")
     List<rentgoods> Searchrent(@Param("Text") String Text);//根据关键字搜索商品
